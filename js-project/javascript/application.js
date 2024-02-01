@@ -4,9 +4,9 @@ console.log("Hello from application.js!");
 // Select DOM elements
 // ////////
 
-// with its ID (Shinji)
-const shinji = document.querySelector("#shinji");
-console.log(shinji);
+// with its ID (Sarah)
+const sarah = document.querySelector("#sarah-amour");
+console.log(sarah);
 
 // with its tag type (h2)
 const title = document.querySelector("h2");
@@ -22,23 +22,25 @@ console.log(list);
 
 // select multiple elements (all the card)
 // cards is a NodeList, looks like an array
+const card = document.querySelector(".card");
+console.log(card); // the first card
 const cards = document.querySelectorAll(".card");
-console.log(cards);
+console.log(cards); // a nodeList, a kind of array
 
 // ////////
 // Modify the DOM
 // ////////
 
-// add an HTML element (Minato reds ⛑️)
-list.insertAdjacentHTML("beforeend", "<li>Minato reds ⛑️</li>");
+// add an HTML element (Roppongi Club)
+list.insertAdjacentHTML("beforeend", "<li>Roppongi <em>Club</em> 🐺</li>");
 
-// same but more complex (add Vincci!!!)
-const yokoCard = document.querySelector(".card ul");
-yokoCard.insertAdjacentHTML(
-  "beforeend", 
+// same but more complex (add Noah!!!)
+const firstCardList = document.querySelector(".card ul");
+firstCardList.insertAdjacentHTML(
+  "afterbegin", 
   `<li>
-    <img id="kam-ying-leung" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1696212707/our5e5ylxkwblhpgnwlh.jpg" alt="">
-    <p>Kam Ying Leung</p>
+    <img id="noah-taiga-endo-meier" src="https://avatars.githubusercontent.com/u/135783511?v=4" alt="">
+    <p>Noah Taiga Endo (meier)</p>
   </li>`
 );
 
@@ -56,15 +58,14 @@ group.classList.remove("text-white");
 group.classList.toggle("text-white");
 
 
-
 // Read/Write for inputs (change the value in the email input)
 const email = document.querySelector("#email");
 console.log(email.value);
 email.value = "yann@lewagon.org";
 
 // Read/Write the (inner) text and HTML content (Yokohama FC ⚽️ title)
-const yokoTitle = document.querySelector("h3");
-console.log(yokoTitle.innerText);
-console.log(yokoTitle.innerHTML);
+const yoko = document.querySelector("#yokohama");
+console.log(yoko.innerText);
+console.log(yoko.innerHTML);
 
-yokoTitle.innerHTML= "Hello <em>everyone</em>";
+yoko.innerHTML = "Hello <em>#1508</em>";

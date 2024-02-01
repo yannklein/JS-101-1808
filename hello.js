@@ -11,71 +11,102 @@
 // To run a file, run in the console: node hello.js
 
 // 3. How to print?
-// console.log("hello");
+// console.log("Hello #1508")
 
 // var, const, let and the lower camel case
 // Note: use backticks (`) for interpolation
-const aGreatStudent = "Guillermo";
-let age = 24;
+
 
 // CONST CANNOT be reassigned
-// aGreatStudent = "Super Guillermo";
+const student = "Leo";
+// student = "Super Leo"; // DOESNT WORK
+// console.log(student);
 
 // LET CAN be reassigned
-age += 1;
-console.log(aGreatStudent, age);
-// interploation
-console.log(`I am ${aGreatStudent} ${age} years-old`);
+let age = 21;
+console.log(student, age);
+age += 1
+console.log(age);
+
+// interpolation
+console.log(`${student} is ${age} years-old`);
 
 // no float/integer
-console.log(typeof(42));
 console.log(typeof(3.14));
+console.log(typeof(3));
 
 // how toString/parseInt works
 // Note: toString doesn’t work without ()
-// .to_i 
-console.log("42");
-console.log(parseInt("42"));
-console.log(parseInt("42", 10));
+
 // .to_s
-console.log((42).toString());
+console.log((3.14).toString());
+
+// .to_i
+console.log(parseInt("3.14", 10));
+console.log(parseFloat("3.14", 10));
 
 // delete element in an array with splice
-const students = ['Michael', 'Mario', 'Rina', 'Mao'];
-// students.splice(3,1); //=> [ 'Michael', 'Mario', 'Rina' ]
-students.splice(2,2); //=> [ 'Michael', 'Mario' ]
+const students = [
+  "Glenn",
+  "Koji",
+  "Ruby",
+  "Justin"
+];
+
+console.log(students);
+students.splice(1,2); // removes 2 elements starting from index 1
 console.log(students);
 
-// object, the magic dot!
-const student = {
-  firstName: "Julien",
-  lastName: "Lesueur" 
-};
 
-console.log(student["firstName"]);
-console.log(student.firstName);
-
-// ===
-// sameness in JS: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
-
-// the JS falsies:
-null // same as Ruby nil
-false // same as Ruby false
-undefined
-0
-NaN
-""
+// iterate over an array
+// JS arrow function () => {}
+students.forEach((student) => {
+  console.log(`${student} is amazing!`);
+});
 
 // [1,2,3].join()
 // ---> '1,2,3'
+// [1,2,3].join("")
+// ---> '123'
+
+// object, the magic dot!
+const anotherStudent = {
+  firstName: "Koji",
+  lastName: "Mimura" 
+};
+
+console.log(anotherStudent["firstName"]);
+console.log(anotherStudent.firstName);
+
+anotherStudent.firstName = "Super Koji";
+console.log(anotherStudent);
+
+
+// ===
+// sameness in JS: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
+console.log("hello" == "hello");
+console.log(0 == 0);
+console.log(0 == "0");
+console.log(0 === "0");
+
+
+// the JS falsies:
+null //nil
+undefined //nil
+false //false
+0
+""
+NaN
+
 
 // JS arrow functions () => {}
 // Note: they look like a 'very special' variable
-const addition = (aNumber, anotherNumber) => {
-  return aNumber + anotherNumber;
-};
+// const add = (aNumber, anotherNumber) => {
+//   return aNumber + anotherNumber;
+// };
+
+// console.log(add(2,4));
 
 // one liner version
-// const addition = (aNumber, anotherNumber) => aNumber + anotherNumber;
-
-console.log(addition(3,5));
+const add = (aNumber, anotherNumber) => aNumber + anotherNumber;
+console.log(add(2,4));
