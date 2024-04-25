@@ -1,6 +1,6 @@
-// ///////////
-// Ruby vs JS
-// ///////////
+// //////////////////////////
+// THE 3 BASICS OF A NEW LANG
+// //////////////////////////
 
 // 1. The docs:
 // - MDN (exhaustive but hard): https://developer.mozilla.org/en-US/docs/Web/JavaScript
@@ -11,102 +11,117 @@
 // To run a file, run in the console: node hello.js
 
 // 3. How to print?
-// console.log("Hello #1508")
+console.log("Hi #1638")
 
-// var, const, let and the lower camel case
-// Note: use backticks (`) for interpolation
+// //////////////////
+// RUBY VS JAVASCRIPT
+// //////////////////
 
+// 1. var, const, let and the lower camel case
 
-// CONST CANNOT be reassigned
-const student = "Leo";
-// student = "Super Leo"; // DOESNT WORK
-// console.log(student);
+// 'const' CANNOT be reassigned
+const student = "Stan";
+// student = "Super Stan";
+console.log(student);
 
-// LET CAN be reassigned
-let age = 21;
-console.log(student, age);
-age += 1
+// 'let' CAN be reassigned
+let age = 19;
+age += 1;
 console.log(age);
 
-// interpolation
-console.log(`${student} is ${age} years-old`);
+// 'var' is the obsolete let (almost!)
 
-// no float/integer
-console.log(typeof(3.14));
-console.log(typeof(3));
+// 2. interpolation
+// Note: use backticks (`) for interpolation
+console.log(`${student} is ${age} years-old.`);
 
-// how toString/parseInt works
+// 3. no float/integer
+console.log(typeof(42))
+console.log(typeof(42.234))
+
+// 4. how toString/parseInt works
 // Note: toString doesn’t work without ()
 
-// .to_s
-console.log((3.14).toString());
+// to_s
+console.log((42).toString());
+console.log(parseInt("42", 10));
 
-// .to_i
-console.log(parseInt("3.14", 10));
-console.log(parseFloat("3.14", 10));
+// can be used to convert into binary
+console.log(parseInt("11", 2));
+// 0 -> 0
+// 1 -> 1
+// 2 -> 10
+// 3 -> 11
 
-// delete element in an array with splice
+// 5. delete element in an array with splice
 const students = [
-  "Glenn",
-  "Koji",
-  "Ruby",
-  "Justin"
+  "Shuxing",
+  "Yoana",
+  "Stan",
+  "Kim"
 ];
 
-console.log(students);
-students.splice(1,2); // removes 2 elements starting from index 1
+students.splice(2, 1); // deleting 1 element from element of index 2 
 console.log(students);
 
 
-// iterate over an array
+// 6. iterate over an array
 // JS arrow function () => {}
+
+// students.each do |student|
+//   puts "#{student} is amazing!"
+// end
+
 students.forEach((student) => {
   console.log(`${student} is amazing!`);
 });
 
+// 7. join() returns adds commas
 // [1,2,3].join()
 // ---> '1,2,3'
 // [1,2,3].join("")
 // ---> '123'
 
-// object, the magic dot!
+// 8. object, the magic dot!
 const anotherStudent = {
-  firstName: "Koji",
-  lastName: "Mimura" 
+  firstName: "Rei",
+  lastName: "Watanabe" 
 };
 
 console.log(anotherStudent["firstName"]);
 console.log(anotherStudent.firstName);
 
-anotherStudent.firstName = "Super Koji";
+anotherStudent.firstName = "Super Rei"
 console.log(anotherStudent);
 
-
-// ===
+// 9. === VS ==
 // sameness in JS: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
-console.log("hello" == "hello");
-console.log(0 == 0);
-console.log(0 == "0");
-console.log(0 === "0");
 
+console.log(3 == 4);
+console.log(3 === 4);
 
-// the JS falsies:
-null //nil
-undefined //nil
-false //false
-0
+console.log(3 == "3");
+console.log(3 === "3");
+
+// 10. the JS falsies:
+if ("") {
+  console.log("this is truthy");
+}
+
+false // false
+null // nil
+undefined
 ""
+0
 NaN
 
-
-// JS arrow functions () => {}
+// 11. JS arrow functions () => {}
 // Note: they look like a 'very special' variable
-// const add = (aNumber, anotherNumber) => {
-//   return aNumber + anotherNumber;
-// };
 
-// console.log(add(2,4));
+const square = (num) => {
+  return num * num; // return is mandatory
+};
 
-// one liner version
-const add = (aNumber, anotherNumber) => aNumber + anotherNumber;
-console.log(add(2,4));
+// const square = num => num * num;
+
+console.log(square(12));

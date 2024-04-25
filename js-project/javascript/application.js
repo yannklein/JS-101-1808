@@ -4,13 +4,15 @@ console.log("Hello from application.js!");
 // Select DOM elements
 // ////////
 
-// with its ID (Sarah)
-const sarah = document.querySelector("#sarah-amour");
-console.log(sarah);
+//document.querySelector(CSS_SELECTOR)
+
+// with its ID (Matthew)
+const matt = document.querySelector("#matthew-davies");
+console.log(matt);
 
 // with its tag type (h2)
-const title = document.querySelector("h2");
-console.log(title);
+const h2 = document.querySelector("h2");
+console.log(h2);
 
 // with its class (group)
 const group = document.querySelector(".group");
@@ -22,30 +24,28 @@ console.log(list);
 
 // select multiple elements (all the card)
 // cards is a NodeList, looks like an array
-const card = document.querySelector(".card");
-console.log(card); // the first card
 const cards = document.querySelectorAll(".card");
-console.log(cards); // a nodeList, a kind of array
+console.log(cards);
 
 // ////////
 // Modify the DOM
 // ////////
 
-// add an HTML element (Roppongi Club)
-list.insertAdjacentHTML("beforeend", "<li>Roppongi <em>Club</em> 🐺</li>");
+// add an HTML element (Yokohama FC)
+list.insertAdjacentHTML("afterbegin", "<li>Yokohama <em>FC</em> ⚽️</li>");
 
-// same but more complex (add Noah!!!)
-const firstCardList = document.querySelector(".card ul");
-firstCardList.insertAdjacentHTML(
-  "afterbegin", 
-  `<li>
-    <img id="noah-taiga-endo-meier" src="https://avatars.githubusercontent.com/u/135783511?v=4" alt="">
-    <p>Noah Taiga Endo (meier)</p>
-  </li>`
-);
+// same but more complex (add Moritz!!!)
+const team = document.querySelector("#yokohama-fc ul");
+const moritz = `<li>
+<img id="moritz-hendrik-emil-lange" src="https://avatars.githubusercontent.com/u/69387212?v=4" alt="">
+<p>Moritz Hendrik Emil Lange</p>
+</li>`;
+
+team.insertAdjacentHTML("beforeend", moritz);
 
 // change the element style (group background to green)
 // Careful! background-color => backgroundColor
+// group.style.color = "red";
 // group.style.color = "red";
 group.style.backgroundColor = "green";
 
@@ -55,17 +55,18 @@ group.classList.add("text-white");
 
 // remove it
 group.classList.remove("text-white");
-group.classList.toggle("text-white");
 
 
 // Read/Write for inputs (change the value in the email input)
-const email = document.querySelector("#email");
-console.log(email.value);
-email.value = "yann@lewagon.org";
+const mail = document.querySelector("#email");
+console.log(mail.value);
+mail.value = "yann@me.com"
 
 // Read/Write the (inner) text and HTML content (Yokohama FC ⚽️ title)
-const yoko = document.querySelector("#yokohama");
-console.log(yoko.innerText);
-console.log(yoko.innerHTML);
+const title = document.querySelector("#yokohama-fc h3");
 
-yoko.innerHTML = "Hello <em>#1508</em>";
+console.log(title.innerText);
+console.log(title.innerHTML);
+
+// title.innerText = "Hello <em> everyone </em>";
+title.innerHTML = "Hello <em> everyone </em>";
